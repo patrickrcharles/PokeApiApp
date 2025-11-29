@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace PokemonEffectivenessApp.src.Models
+namespace PokeApiApp.Models
 {
     public class TypeRelationsDto
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using PokemonEffectivenessApp.src.ApiClient;
-using PokemonEffectivenessApp.src.Models;
-using PokemonEffectivenessApp.src.Services;
+using PokeApiApp.ApiClient;
+using PokeApiApp.Models;
+using PokeApiApp.Services;
 
 internal static class Program
 {

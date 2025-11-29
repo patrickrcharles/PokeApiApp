@@ -1,4 +1,4 @@
-﻿namespace PokemonEffectivenessApp.src.Models
+﻿namespace PokeApiApp.Models
 {
     public class CombinedEffectivenessDTO
     {

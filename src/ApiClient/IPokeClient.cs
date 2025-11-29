@@ -1,6 +1,6 @@
-﻿using PokemonEffectivenessApp.src.Models;
+﻿using PokeApiApp.Models;
 
-namespace PokemonEffectivenessApp.src.ApiClient
+namespace PokeApiApp.ApiClient
 {
     public interface IPokeApiClient
     {

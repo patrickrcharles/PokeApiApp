@@ -1,5 +1,5 @@
-﻿using PokemonEffectivenessApp.src.Models;
-using PokemonEffectivenessApp.src.Services;
+﻿using PokeApiApp.Models;
+using PokeApiApp.Services;
 
 namespace PokemonEffectivenessTests.Tests.Services
 {

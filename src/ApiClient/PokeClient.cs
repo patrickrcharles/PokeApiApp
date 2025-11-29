@@ -1,7 +1,7 @@
-﻿using PokemonEffectivenessApp.src.Models;
+﻿using PokeApiApp.Models;
 using System.Net.Http.Json;
 
-namespace PokemonEffectivenessApp.src.ApiClient
+namespace PokeApiApp.ApiClient
 {
     public class PokeApiClient(HttpClient http) : IPokeApiClient
     {
