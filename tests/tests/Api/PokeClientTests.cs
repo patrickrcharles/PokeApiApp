@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
-using PokemonEffectivenessApp.src.ApiClient;
-using PokemonEffectivenessApp.src.Models;
+using PokeApiApp.ApiClient;
+using PokeApiApp.Models;
 
 namespace PokemonEffectivenessTests.Tests.Api;
 
