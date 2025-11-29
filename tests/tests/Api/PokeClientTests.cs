@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using PokeApiApp.ApiClient;
 using PokeApiApp.Models;
 
-namespace PokemonEffectivenessTests.Tests.Api;
+namespace PokeApiTests.tests.Api;
 
 public class PokeApiClientTests
 {

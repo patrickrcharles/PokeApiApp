@@ -1,7 +1,7 @@
 ﻿using PokeApiApp.Models;
 using PokeApiApp.Services;
 
-namespace PokemonEffectivenessTests.Tests.Services
+namespace PokeApiTests.tests.Services
 {
     public class PokemonTypeEffectivenessServiceTests
     {
@@ -26,12 +26,12 @@ namespace PokemonEffectivenessTests.Tests.Services
                 Name = name,
                 DamageRelations = new TypeRelationsDto
                 {
-                    DoubleDamageTo = doubleDamageTo ?? new(),
-                    NoDamageFrom = noDamageFrom ?? new(),
-                    HalfDamageFrom = halfDamageFrom ?? new(),
-                    NoDamageTo = noDamageTo ?? new(),
-                    HalfDamageTo = halfDamageTo ?? new(),
-                    DoubleDamageFrom = doubleDamageFrom ?? new()
+                    DoubleDamageTo = doubleDamageTo ?? [],
+                    NoDamageFrom = noDamageFrom ?? [],
+                    HalfDamageFrom = halfDamageFrom ?? [],
+                    NoDamageTo = noDamageTo ?? [],
+                    HalfDamageTo = halfDamageTo ?? [],
+                    DoubleDamageFrom = doubleDamageFrom ?? []
                 }
             };
         }
@@ -75,9 +75,9 @@ namespace PokemonEffectivenessTests.Tests.Services
         {
             var dto = CreateDto(
                 name: "fire",
-                doubleDamageTo: new() { PT("grass"), PT("ice") },
-                noDamageFrom: new() { PT("ghost") },
-                halfDamageFrom: new() { PT("water") }
+                doubleDamageTo: [PT("grass"), PT("ice")],
+                noDamageFrom: [PT("ghost")],
+                halfDamageFrom: [PT("water")]
             );
 
             var combined = CreateCombined();
@@ -97,9 +97,9 @@ namespace PokemonEffectivenessTests.Tests.Services
         {
             var dto = CreateDto(
                 name: "steel",
-                noDamageTo: new() { PT("fairy") },
-                halfDamageTo: new() { PT("rock") },
-                doubleDamageFrom: new() { PT("electric") }
+                noDamageTo: [PT("fairy")],
+                halfDamageTo: [PT("rock")],
+                doubleDamageFrom: [PT("electric")]
             );
 
             var combined = CreateCombined();
@@ -117,8 +117,8 @@ namespace PokemonEffectivenessTests.Tests.Services
         public void ApplyTypeRelations_Ignores_Duplicates()
         {
             var dto = CreateDto(
-                doubleDamageTo: new() { PT("grass"), PT("grass") },
-                noDamageTo: new() { PT("poison"), PT("poison") }
+                doubleDamageTo: [PT("grass"), PT("grass")],
+                noDamageTo: [PT("poison"), PT("poison")]
             );
 
             var combined = CreateCombined();
