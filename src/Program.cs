@@ -17,17 +17,17 @@ internal static class Program
         var apiClient = serviceProvider.GetRequiredService<IPokeApiClient>();
         var effectivenessService = serviceProvider.GetRequiredService<IPokemonTypeEffectivenessService>();
 
-        Console.Write("Enter Pokémon name or type 'exit' to quit\n");
+        Console.Write("Enter Pokemon name or type 'exit' to quit\n");
         while (true)
         {
             try
             {
-                Console.Write("\nEnter Pokémon name: ");
+                Console.Write("\nEnter Pokemon name: ");
                 var input = Console.ReadLine()?.Trim();
                 // check for bad input
                 if (string.IsNullOrWhiteSpace(input))
                 {
-                    Console.WriteLine("Invalid Pokémon name.");
+                    Console.WriteLine("Invalid Pokemon name.");
                     continue;
                 }
                 // exit
@@ -41,7 +41,7 @@ internal static class Program
                 // verify pokemon input
                 if (pokemon == null || pokemon.Types.Count == 0)
                 {
-                    Console.WriteLine($"Pokémon '{input}' not found or has no types.");
+                    Console.WriteLine($"Pokemon '{input}' not found or has no types.");
                     continue;
                 }
                 // get all pokemon types. pokemon can have multiple types
