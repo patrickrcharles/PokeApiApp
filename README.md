@@ -20,10 +20,10 @@ dotnet restore
 # 3. Build the project (or solution, if present)
 dotnet build 
 
-#4. Run the Application
+# 4. Run the Application
 dotnet run --project src/PokeApiApp.csproj
 
-#5 Run Tests
+# 5 Run Tests
 cd tests
 dotnet test
 
