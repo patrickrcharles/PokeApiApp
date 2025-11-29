@@ -1,6 +1,6 @@
 # PokeApiApp
 
-A C# application that interacts with the PokeAPI — fetches Pokemon name, types, stats, and provides a console UI for determining what types
+A C# console application that interacts with the PokeAPI — fetches Pokemon name, types, stats, and provides a console UI for determining what types
 of Pokemon the entered Pokemon is strong and weak against.
 
 To use the app, enter a Pokemon's name and the app will display the Pokemon's type and what types it is strong and weak against.
