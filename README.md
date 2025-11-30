@@ -19,7 +19,7 @@ Weak Against: rock, fire, water, dragon, ground, steel, electric, ice
 To exit the app, type 'exit' into the console.
 
 ## Prerequisites
-- [.NET SDK](https://dotnet.microsoft.com/download) (version matching your project, e.g. .NET 6 or .NET 7)  
+- [.NET SDK](https://dotnet.microsoft.com/download) (.NET 8)  
 - Internet connection (to call PokéAPI endpoints)  
 
 # Setup — Clone & Build
