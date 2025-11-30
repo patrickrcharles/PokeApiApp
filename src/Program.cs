@@ -7,12 +7,12 @@ internal static class Program
 {
     private static async Task Main(string[] args)
     {
-        // update services
+        // Register services in the DI container
         var services = new ServiceCollection();
         services.AddSingleton<HttpClient>();
         services.AddSingleton<IPokeApiClient, PokeApiClient>();
         services.AddSingleton<IPokemonTypeEffectivenessService, PokemonTypeEffectivenessService>();
-        // dependency injection
+        // Build service provider and resolve services
         using var serviceProvider = services.BuildServiceProvider();
         var apiClient = serviceProvider.GetRequiredService<IPokeApiClient>();
         var effectivenessService = serviceProvider.GetRequiredService<IPokemonTypeEffectivenessService>();
@@ -24,40 +24,40 @@ internal static class Program
             {
                 Console.Write("\nEnter Pokemon name: ");
                 var input = Console.ReadLine()?.Trim();
-                // check for bad input
+                // Validate input
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("Invalid Pokemon name.");
                     continue;
                 }
-                // exit
+                // Exit condition
                 if (input.ToLower().Equals("exit"))
                 {
                     Console.WriteLine("goodbye...");
                     break;
                 }
-                
+                // Fetch Pokemon data asynchronously
                 var pokemon = await apiClient.GetPokemonAsync(input.ToLower());
-                // verify pokemon input
+                
                 if (pokemon == null || pokemon.Types.Count == 0)
                 {
                     Console.WriteLine($"Pokemon '{input}' not found or has no types.");
                     continue;
                 }
-                // get all pokemon types. pokemon can have multiple types
+                // Prepare combined DTO to store computed effectiveness
                 var combined = new CombinedEffectivenessDTO
                 {
                     Name = pokemon.Name,
                     Types = pokemon.Types.Select(t => t.Type.Name)
                 };
-                // get type relations for each pokemon type and apply effectivenesses
+                // Fetch each type and apply effectiveness
                 foreach (var t in pokemon.Types)
                 {
                     var typeDto = await apiClient.GetTypeByUrlAsync(t.Type.Url);
                     if (typeDto != null) 
                         effectivenessService.ApplyTypeRelations(typeDto, combined);
                 }
-                
+                // Display results
                 DisplayEffectiveness(combined);
             }
             catch (HttpRequestException ex)
