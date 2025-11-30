@@ -31,7 +31,7 @@ internal static class Program
                     continue;
                 }
                 // exit
-                if (input.Equals("exit"))
+                if (input.ToLower().Equals("exit"))
                 {
                     Console.WriteLine("goodbye...");
                     break;
