@@ -2,7 +2,7 @@
 
 namespace PokeApiApp.Models
 {
-    public class TypeRelationsDto
+    public record TypeRelationsDto
     {
         [JsonPropertyName("double_damage_to")]
         public List<PokemonType> DoubleDamageTo { get; init; } = new();

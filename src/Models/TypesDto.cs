@@ -2,12 +2,11 @@
 
 namespace PokeApiApp.Models
 {
-    public class TypesDto
+    public record TypesDto
     {
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
         [JsonPropertyName("damage_relations")]
         public TypeRelationsDto DamageRelations { get; init; } = new();
     }
-
 }

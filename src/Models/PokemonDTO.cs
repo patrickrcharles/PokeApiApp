@@ -2,7 +2,7 @@
 
 namespace PokeApiApp.Models
 {
-    public class PokemonDto
+    public record PokemonDto
     {
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
@@ -10,13 +10,13 @@ namespace PokeApiApp.Models
         public List<PokemonTypesList> Types { get; init; } = new();
     }
 
-    public class PokemonTypesList
+    public record PokemonTypesList
     {
         [JsonPropertyName("type")]
         public PokemonType Type { get; init; } = new();
     }
 
-    public class PokemonType
+    public record PokemonType
     {
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
