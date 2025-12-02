@@ -9,6 +9,7 @@ public class PokemonTypeEffectivenessService : IPokemonTypeEffectivenessService
         ArgumentNullException.ThrowIfNull(dto);
         ArgumentNullException.ThrowIfNull(combined);
 
+        // Extract the type's damage relation info once to avoid repeatedly accessing dto.DamageRelations.
         var r = dto.DamageRelations;
 
         // === STRONG AGAINST ===
